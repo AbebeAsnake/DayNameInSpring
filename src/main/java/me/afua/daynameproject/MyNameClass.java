@@ -10,6 +10,7 @@ public class MyNameClass {
     private String femaleName;
     private DayOfWeek theDay;
     private String myAnimal;
+    private String myZodiac;
 
 
     public MyNameClass() {
@@ -174,7 +175,8 @@ public class MyNameClass {
 
         LocalDate endGemini = LocalDate.parse("21 06 "+theDate.getYear(),dTF);
         if(theDate.isBefore(endGemini)&& theDate.isAfter(startGemini)){
-                return true;
+            myZodiac = "Gemini";
+            return true;
         }
         else{
         return false;
