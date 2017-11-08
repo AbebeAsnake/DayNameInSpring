@@ -166,4 +166,18 @@ public class MyNameClass {
             break;
         }
     }
+
+    public boolean isGemini()
+    {
+        DateTimeFormatter dTF = DateTimeFormatter.ofPattern("dd MM yyyy");
+        LocalDate startGemini = LocalDate.parse("22 05 "+theDate.getYear(),dTF);
+
+        LocalDate endGemini = LocalDate.parse("21 06 "+theDate.getYear(),dTF);
+        if(theDate.isBefore(endGemini)&& theDate.isAfter(startGemini)){
+                return true;
+        }
+        else{
+        return false;
+        }
+    }
 }

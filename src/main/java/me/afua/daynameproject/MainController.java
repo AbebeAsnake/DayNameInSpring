@@ -45,6 +45,7 @@ public class MainController {
         //Included the Chinese Zodiac as well
         model.addAttribute("animal",getName.getMyAnimal());
 
+        model.addAttribute("testingGemini",getName.isGemini());
         //Showing another way in which the values of male and female name can be adjusted, so that
         //blank values will not display text in the view. This is a long-winded way (simpler, but much longer!)
         if(showMe.equalsIgnoreCase("female")|| showMe.equalsIgnoreCase("both"))

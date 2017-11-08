@@ -19,6 +19,7 @@
                 <div  th:if="${malename}!=''" th:inline="text">Male name:[[${malename}]]</div>
                 <div  th:if="${femalename}!=''" th:inline="text">Female name:[[${femalename}]]</div>
                 <div th:inline="text">Chinese Zodiac animal: [[${animal}]]</div>
+                <div th:if="${testingGemini}" th:inline="text">Gemini!!</div>
                 <!--<div th:if="${femalename}?: '(Female name:'+ [[${femalename}]])"></div>-->
             </div>
 
