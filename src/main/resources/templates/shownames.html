@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>My Day Name</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+</head>
+<body>
+
+<div class="container">
+
+        <div class="col-md-12 h3 text-center">
+            <div>
+                <label th:inline="text">Day names for [[${enteredDate}]]</label>
+            </div>
+            <div>
+                <div  th:if="${malename}!=''" th:inline="text">Male name:[[${malename}]]</div>
+                <div  th:if="${femalename}!=''" th:inline="text">Female name:[[${femalename}]]</div>
+                <!--<div th:if="${femalename}?: '(Female name:'+ [[${femalename}]])"></div>-->
+            </div>
+
+            <div>
+                <!-- The switch statement below can be be modified to display the text as desired.
+                Modify this so it styles the male and female names appropriately,
+                based on the selected option -->
+                <div th:switch="${toshow}">
+                    <p th:case="'both'">Both male and female were selected</p>
+                    <p th:case="'male'">Only male was selected</p>
+                    <p th:case="'female'">Only female was selected</p>
+                </div>
+            </div>
+            <!-- See how this acts like a loop?-->
+            <div><a class="btn btn-default" th:href="@{/}" >Enter another date</a></div>
+
+
+</div>
+<div class="row">
+    <div class="col-md-6 "></div>
+    <div class="col-md-6"></div>
+</div>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
