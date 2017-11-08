@@ -42,6 +42,9 @@ public class MainController {
         //Passing the value of the radio button so it can be used later
         model.addAttribute("toshow",showMe);
 
+        //Included the Chinese Zodiac as well
+        model.addAttribute("animal",getName.getMyAnimal());
+
         //Showing another way in which the values of male and female name can be adjusted, so that
         //blank values will not display text in the view. This is a long-winded way (simpler, but much longer!)
         if(showMe.equalsIgnoreCase("female")|| showMe.equalsIgnoreCase("both"))

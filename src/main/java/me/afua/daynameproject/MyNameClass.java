@@ -9,6 +9,7 @@ public class MyNameClass {
     private String maleName;
     private String femaleName;
     private DayOfWeek theDay;
+    private String myAnimal;
 
 
     public MyNameClass() {
@@ -19,6 +20,7 @@ public class MyNameClass {
         //Set the value of the date as soon as the class is created.
         DateTimeFormatter enteredFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         theDate = LocalDate.parse(aDate, enteredFormat);
+        calculateChineseZodiac();
 
         //Used the enum value of the day of the week instead of getting a text value.
         //It makes the switch statement more efficient.
@@ -100,5 +102,68 @@ public class MyNameClass {
 
         DateTimeFormatter myFullDate = DateTimeFormatter.ofPattern("EEEE dd MMM yyyy");
         return theDate.format(myFullDate);
+    }
+
+    public DayOfWeek getTheDay() {
+        return theDay;
+    }
+
+    public void setTheDay(DayOfWeek theDay) {
+        this.theDay = theDay;
+    }
+
+    public String getMyAnimal() {
+        return myAnimal;
+    }
+
+    public void setMyAnimal(String myAnimal) {
+        this.myAnimal = myAnimal;
+    }
+
+    public void calculateChineseZodiac()
+    {
+        switch(theDate.getYear()%12)
+        {
+            case 0:
+                setMyAnimal("Monkey");
+            break;
+            case 1:
+                setMyAnimal("Rooster");
+            break;
+            case 2:
+                setMyAnimal("Dog");
+            break;
+            case 3:
+                setMyAnimal("Pig");
+            break;
+            case 4:
+                setMyAnimal("Rat");
+
+                break;
+            case 5:
+                setMyAnimal("Ox");
+
+                break;
+            case 6:
+                setMyAnimal("Tiger");
+
+                break;
+            case 7:
+                setMyAnimal("Rabbit");
+
+                break;
+            case 8:
+                setMyAnimal("Dragon");
+            break;
+            case 9:
+                setMyAnimal("Snake");
+            break;
+            case 10:
+                setMyAnimal("Horse");
+            break;
+            case 11:
+                setMyAnimal("Sheep");
+            break;
+        }
     }
 }
